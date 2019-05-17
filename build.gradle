@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id "co.riiid.gradle" version "0.4.2"
 
 }
 
@@ -8,27 +9,20 @@ sourceCompatibility = 1.8
 group = 'support.kajstech.simplecfg'
 version = '0.1'
 
+
+github {
+    owner = 'KajBot'
+    repo = 'SimpleCfg'
+    token = gradle.ext.token
+    tagName = rootProject.version
+    targetCommitish = 'master'
+    assets = [
+            'build/libs/SimpleCfg-' + rootProject.version + '.jar'
+    ]
+}
 repositories {
     jcenter()
 }
 
 dependencies {
-}
-
-publishing {
-    repositories {
-        maven {
-            url gradle.ext.repoWriteUrl
-            credentials {
-                username 'myMavenRepo'
-                password gradle.ext.repoWritePassword
-            }
-        }
-    }
-
-    publications {
-        maven(MavenPublication) {
-            from components.java
-        }
-    }
 }
