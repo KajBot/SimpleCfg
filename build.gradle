@@ -1,0 +1,34 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+
+}
+
+sourceCompatibility = 1.8
+group = 'support.kajstech.simplecfg'
+version = '0.1'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+}
+
+publishing {
+    repositories {
+        maven {
+            url gradle.ext.repoWriteUrl
+            credentials {
+                username 'myMavenRepo'
+                password gradle.ext.repoWritePassword
+            }
+        }
+    }
+
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
