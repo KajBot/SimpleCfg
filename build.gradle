@@ -13,12 +13,3 @@ repositories {
 
 dependencies {
 }
-
-if(!System.env.Jenkins) return
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: env.Jenkins.Repository)
-        }
-    }
-}
