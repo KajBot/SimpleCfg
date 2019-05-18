@@ -1,2 +1,2 @@
 # SimpleCfg
-[![](https://jitpack.io/v/KajBot/SimpleCfg.svg)](https://jitpack.io/#KajBot/SimpleCfg)
+[![Build Status](http://jenkins.jensz12.com:8080/buildStatus/icon?job=SimpleCfg)](http://jenkins.jensz12.com:8080/job/SimpleCfg/)
