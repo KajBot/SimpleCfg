@@ -1,7 +1,6 @@
 plugins {
     id 'maven'
     id 'java-library'
-    id 'maven-publish'
 }
 
 sourceCompatibility = 1.8
