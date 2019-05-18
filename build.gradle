@@ -29,8 +29,13 @@ task writePom {
                 distributionManagement {
                     repository {
                         id 'jensbot'
-                        name 'jensbot'
-                        url 'http://repo.jensz12.com:8081/repository/jensbot/'
+                        url 'http://repo.jensz12.com/repository/jensbot/'
+                        releases{
+                            enabled true
+                        }
+                        snapshots{
+                            enabled true
+                        }
                     }
                 }
             }
