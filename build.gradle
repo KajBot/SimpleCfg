@@ -1,6 +1,7 @@
 plugins {
     id 'maven'
     id 'java-library'
+    id 'maven-publish'
 }
 
 sourceCompatibility = 1.8
@@ -11,4 +12,13 @@ repositories {
 }
 
 dependencies {
+}
+
+if(!System.env.Jenkins) return
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: env.Jenkins.Repository)
+        }
+    }
 }
