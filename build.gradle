@@ -26,6 +26,13 @@ task writePom {
                         distribution 'repo'
                     }
                 }
+                distributionManagement {
+                    repository {
+                        id 'jensbot'
+                        name 'jensbot'
+                        url 'http://repo.jensz12.com:8081/repository/jensbot/'
+                    }
+                }
             }
         }.writeTo("pom.xml")
     }
