@@ -10,6 +10,14 @@ sourceCompatibility = 1.8
 group = 'support.kajstech.simplecfg'
 version = '0.1'
 
+repositories {
+    jcenter()
+}
+
+dependencies {
+}
+
+if (System.env.JITPACK) return
 github {
     owner = 'KajBot'
     repo = 'SimpleCfg'
@@ -19,10 +27,4 @@ github {
     assets = [
             'build/libs/SimpleCfg-' + rootProject.version + '.jar'
     ]
-}
-repositories {
-    jcenter()
-}
-
-dependencies {
 }
