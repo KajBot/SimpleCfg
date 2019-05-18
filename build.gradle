@@ -13,7 +13,7 @@ version = '0.1'
 github {
     owner = 'KajBot'
     repo = 'SimpleCfg'
-    token = gradle.ext.token
+    token = githubToken
     tagName = rootProject.version
     targetCommitish = 'master'
     assets = [
