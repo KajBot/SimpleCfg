@@ -52,7 +52,8 @@ public class ConfigImpl implements SimpleCfg {
     public void load() {
         try {
             if (format == Format.XML) props.loadFromXML(new FileInputStream(path + "." + format.toString()));
-            if (format == Format.PROPERTIES) props.load(new BufferedReader(new InputStreamReader(new FileInputStream(path + "." + format.toString()), StandardCharsets.UTF_8)));
+            if (format == Format.PROPERTIES)
+                props.load(new BufferedReader(new InputStreamReader(new FileInputStream(path + "." + format.toString()), StandardCharsets.UTF_8)));
         } catch (FileNotFoundException e) {
             if (fallback != null && !path.exists()) {
                 try {
