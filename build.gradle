@@ -21,6 +21,7 @@ publishing {
         }
     }
 }
+
 publishing {
     repositories {
         maven {
@@ -30,5 +31,11 @@ publishing {
                 password repoPass
             }
         }
+    }
+}
+
+task projectDetails {
+    doLast {
+        println "PROJECT_VERSION=${project.version}"
     }
 }
