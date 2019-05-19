@@ -1,2 +1,2 @@
 # SimpleCfg
-[![Build Status](http://jenkins.jensz12.com:8080/buildStatus/icon?job=SimpleCfg)](http://jenkins.jensz12.com:8080/job/SimpleCfg/)
+[![Build Status](http://jenkins.jensz12.com/buildStatus/icon?job=SimpleCfg)](http://jenkins.jensz12.com/job/SimpleCfg/)
