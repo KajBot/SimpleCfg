@@ -33,9 +33,3 @@ publishing {
         }
     }
 }
-
-task projectDetails {
-    doLast {
-        println "PROJECT_VERSION=${project.version}"
-    }
-}
