@@ -3,6 +3,7 @@ package support.kajstech.simplecfg;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class ConfigImpl implements SimpleCfg {
@@ -57,7 +58,7 @@ public class ConfigImpl implements SimpleCfg {
         } catch (FileNotFoundException e) {
             if (fallback != null && !path.exists()) {
                 try {
-                    Files.copy(ClassLoader.getSystemResourceAsStream(fallback.getName()), path.getAbsoluteFile().toPath());
+                    Files.copy(ClassLoader.getSystemResourceAsStream(fallback.getName()), Paths.get(path.getAbsoluteFile().toPath() + ".properties"));
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }

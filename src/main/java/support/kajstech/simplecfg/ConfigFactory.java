@@ -10,6 +10,7 @@ public class ConfigFactory {
 
     public ConfigFactory() {
         this(new File(System.getProperty("user.dir") + "/config.properties"));
+        format(Format.PROPERTIES);
     }
 
     public ConfigFactory(File path) {
