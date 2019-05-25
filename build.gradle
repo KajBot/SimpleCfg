@@ -25,7 +25,7 @@ publishing {
 publishing {
     repositories {
         maven {
-            url 'http://repo.jensz12.com:8081/repository/jensz12/'
+            url 'https://repo.jensz12.com/repository/jensz12/'
             credentials {
                 username repoUser
                 password repoPass
