@@ -41,9 +41,9 @@ public class ConfigImpl implements SimpleCfg {
     @Override
     public void save() {
         try {
-            if (format == Format.XML) props.storeToXML(new FileOutputStream(path + "." + format.toString()), null);
+            if (format == Format.XML) props.storeToXML(new FileOutputStream(path), null);
             if (format == Format.PROPERTIES)
-                props.store(new OutputStreamWriter(new FileOutputStream(path + "." + format.toString()), StandardCharsets.UTF_8), null);
+                props.store(new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8), null);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -52,13 +52,12 @@ public class ConfigImpl implements SimpleCfg {
     @Override
     public void load() {
         try {
-            if (format == Format.XML) props.loadFromXML(new FileInputStream(path + "." + format.toString()));
-            if (format == Format.PROPERTIES)
-                props.load(new BufferedReader(new InputStreamReader(new FileInputStream(path + "." + format.toString()), StandardCharsets.UTF_8)));
+            if (format == Format.XML) props.loadFromXML(new FileInputStream(path));
+            if (format == Format.PROPERTIES) props.load(new BufferedReader(new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8)));
         } catch (FileNotFoundException e) {
             if (fallback != null && !path.exists()) {
                 try {
-                    Files.copy(ClassLoader.getSystemResourceAsStream(fallback.getName()), Paths.get(path.getAbsoluteFile().toPath() + ".properties"));
+                    Files.copy(ClassLoader.getSystemResourceAsStream(fallback.getName()), Paths.get(path.toString()));
                 } catch (IOException ignored) {
                 }
             }
