@@ -1,4 +1,4 @@
-package support.kajstech.simplecfg;
+package dk.jensbot.simplecfg;
 
 import java.io.File;
 

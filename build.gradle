@@ -5,7 +5,7 @@ plugins {
 }
 
 sourceCompatibility = 1.8
-group = 'support.kajstech.simplecfg'
+group = 'dk.jensbot.simplecfg'
 version = '0.1.2'
 
 repositories {
