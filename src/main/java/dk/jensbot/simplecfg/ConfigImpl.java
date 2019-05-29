@@ -34,6 +34,12 @@ public class ConfigImpl implements SimpleCfg {
     }
 
     @Override
+    public void del(String key) {
+        props.remove(key);
+        save();
+    }
+
+    @Override
     public boolean contains(String key) {
         return props.containsKey(key) && !get(key).isEmpty();
     }

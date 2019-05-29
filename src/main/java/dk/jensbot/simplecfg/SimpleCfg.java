@@ -6,6 +6,8 @@ public interface SimpleCfg {
 
     void set(String key, String value);
 
+    void del(String key);
+
     boolean contains(String key);
 
     void save();
