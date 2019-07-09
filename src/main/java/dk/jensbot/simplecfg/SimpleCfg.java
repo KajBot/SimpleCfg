@@ -1,8 +1,12 @@
 package dk.jensbot.simplecfg;
 
+import java.util.Properties;
+
 public interface SimpleCfg {
 
     String get(String key);
+
+    Properties getProps();
 
     void set(String key, String value);
 
@@ -13,5 +17,4 @@ public interface SimpleCfg {
     void save();
 
     void load();
-
 }

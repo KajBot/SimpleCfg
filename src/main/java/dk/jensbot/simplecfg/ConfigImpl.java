@@ -28,6 +28,11 @@ public class ConfigImpl implements SimpleCfg {
     }
 
     @Override
+    public Properties getProps() {
+        return props;
+    }
+
+    @Override
     public void set(String key, String value) {
         props.setProperty(key, value);
         save();
