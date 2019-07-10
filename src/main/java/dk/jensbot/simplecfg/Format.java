@@ -3,5 +3,6 @@ package dk.jensbot.simplecfg;
 public enum Format {
 
     XML,
-    PROPERTIES
+    PROPERTIES,
+    JSON
 }

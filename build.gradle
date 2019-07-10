@@ -7,12 +7,14 @@ plugins {
 
 sourceCompatibility = 1.8
 group = 'dk.jensbot.simplecfg'
-version = '0.1.4'
+version = '0.1.5'
 
 repositories {
+    jcenter()
 }
 
 dependencies {
+    compile('org.json:json:20180813')
 }
 
 publishing {

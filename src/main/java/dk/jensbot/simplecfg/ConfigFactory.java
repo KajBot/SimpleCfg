@@ -9,7 +9,7 @@ public class ConfigFactory {
     protected File fallback;
 
     public ConfigFactory() {
-        this(new File(System.getProperty("user.dir") + "/config.properties"));
+        this(new File("config"));
         format(Format.PROPERTIES);
     }
 
@@ -28,8 +28,7 @@ public class ConfigFactory {
     }
 
     public SimpleCfg build() {
-
-        return new ConfigImpl(cfgPath, format, fallback);
+        return new ConfigImpl(new File(System.getProperty("user.dir") + "/" + cfgPath + "." + format.toString().toLowerCase()), format, fallback);
     }
 
 }
