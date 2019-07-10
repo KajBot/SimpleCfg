@@ -19,7 +19,6 @@ public class ConfigImpl implements SimpleCfg {
         this.path = path;
         this.format = format;
         this.fallback = fallback;
-        System.out.println(this.path);
     }
 
     @Override
