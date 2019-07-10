@@ -12,7 +12,9 @@ public interface SimpleCfg {
 
     void del(String key);
 
-    boolean contains(String key);
+    boolean hasKey(String key);
+
+    boolean hasValue(String key);
 
     void save();
 

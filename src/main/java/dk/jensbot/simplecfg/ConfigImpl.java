@@ -10,12 +10,12 @@ import java.util.Properties;
 
 public class ConfigImpl implements SimpleCfg {
 
-    protected final File path;
-    protected final Format format;
-    protected final File fallback;
+    private final File path;
+    private final Format format;
+    private final File fallback;
     private Properties props = new Properties();
 
-    public ConfigImpl(File path, Format format, File fallback) {
+    ConfigImpl(File path, Format format, File fallback) {
         this.path = path;
         this.format = format;
         this.fallback = fallback;
@@ -23,7 +23,6 @@ public class ConfigImpl implements SimpleCfg {
 
     @Override
     public String get(String key) {
-        load();
         return props.getProperty(key) == null ? "Missing property" : props.getProperty(key);
     }
 
@@ -45,7 +44,11 @@ public class ConfigImpl implements SimpleCfg {
     }
 
     @Override
-    public boolean contains(String key) {
+    public boolean hasKey(String key) {
+        return props.containsKey(key);
+    }
+
+    public boolean hasValue(String key) {
         return props.containsKey(key) && !get(key).isEmpty();
     }
 

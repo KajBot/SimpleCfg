@@ -7,7 +7,7 @@ plugins {
 
 sourceCompatibility = 1.8
 group = 'dk.jensbot.simplecfg'
-version = '0.1.6'
+version = '0.1.7'
 
 repositories {
     jcenter()

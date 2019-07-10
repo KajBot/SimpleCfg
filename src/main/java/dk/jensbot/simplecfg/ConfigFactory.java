@@ -3,10 +3,9 @@ package dk.jensbot.simplecfg;
 import java.io.File;
 
 public class ConfigFactory {
-
-    protected File cfgPath;
-    protected Format format;
-    protected File fallback;
+    private File cfgPath;
+    private Format format;
+    private File fallback;
 
     public ConfigFactory() {
         this(new File("config"));
@@ -28,7 +27,9 @@ public class ConfigFactory {
     }
 
     public SimpleCfg build() {
-        return new ConfigImpl(new File(System.getProperty("user.dir") + "/" + cfgPath + "." + format.toString().toLowerCase()), format, fallback);
+        SimpleCfg cfg = new ConfigImpl(new File(System.getProperty("user.dir") + "/" + cfgPath + "." + format.toString().toLowerCase()), format, fallback);
+        cfg.load();
+        return cfg;
     }
 
 }
