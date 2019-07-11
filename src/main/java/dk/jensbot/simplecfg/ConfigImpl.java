@@ -1,5 +1,7 @@
 package dk.jensbot.simplecfg;
 
+import dk.jensbot.simplecfg.formats.JSON;
+import dk.jensbot.simplecfg.formats.YAML;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -63,6 +65,11 @@ public class ConfigImpl implements SimpleCfg {
                     writer.write(JSON.toJson(props).toString(2));
                 }
             }
+            if (format == Format.YAML) {
+                try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8)) {
+                    writer.write(YAML.toYAML(props));
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -83,6 +90,10 @@ public class ConfigImpl implements SimpleCfg {
             if (format == Format.JSON) {
                 String jsonString = new String(Files.readAllBytes(Paths.get(path.toURI())), StandardCharsets.UTF_8);
                 props.putAll(JSON.toProps(new JSONObject(jsonString)));
+            }
+            if (format == Format.YAML) {
+                String yamlString = new String(Files.readAllBytes(Paths.get(path.toURI())), StandardCharsets.UTF_8);
+                props.putAll(YAML.toProps(yamlString));
             }
         } catch (IOException ex) {
             ex.printStackTrace();

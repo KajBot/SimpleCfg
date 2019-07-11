@@ -26,7 +26,7 @@ public class ConfigFactory {
         return this;
     }
 
-    public SimpleCfg build() {
+    public SimpleCfg create() {
         SimpleCfg cfg = new ConfigImpl(new File(System.getProperty("user.dir") + "/" + cfgPath + "." + format.toString().toLowerCase()), format, fallback);
         cfg.load();
         return cfg;

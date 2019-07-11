@@ -7,7 +7,7 @@ plugins {
 
 sourceCompatibility = 1.8
 group = 'dk.jensbot.simplecfg'
-version = '0.1.7'
+version = '0.1.8'
 
 repositories {
     jcenter()
@@ -15,6 +15,7 @@ repositories {
 
 dependencies {
     compile('org.json:json:20180813')
+    compile('org.yaml:snakeyaml:1.24')
 }
 
 publishing {
